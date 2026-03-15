@@ -592,10 +592,10 @@
   }
 
   /* ─── RESPONSIVE ─── */
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
 
     /* Hero */
-    .hero { padding: 60px 20px 48px; }
+    .hero { padding: 40px 20px 48px; min-height: auto; }
     .logo-wrap { width: 72px; height: 72px; border-radius: 16px; margin-bottom: 24px; }
     .hero-eyebrow { font-size: 10px; margin-bottom: 14px; }
     .hero-title { font-size: 48px; margin-bottom: 6px; }
@@ -603,15 +603,15 @@
     .hero-tagline { font-size: 15px; margin-top: 16px; margin-bottom: 36px; }
     .btn-primary { font-size: 15px; padding: 14px 24px; }
 
-    /* Screenshots — stack vertically, show only center phone */
+    /* Screenshots — hide side phones, center only */
     .screenshots-section { padding: 40px 20px 60px; }
     .screenshots-track { gap: 0; justify-content: center; }
     .phone-frame { display: none; }
     .phone-frame.center {
       display: flex;
       transform: none;
-      width: 260px;
-      height: 564px;
+      width: 280px;
+      height: 607px;
     }
     .phone-frame.center:hover { transform: translateY(-4px); }
 
