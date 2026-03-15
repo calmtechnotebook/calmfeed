@@ -64,6 +64,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    mix-blend-mode: screen;
   }
 
   .hero-eyebrow {
@@ -322,7 +323,7 @@
 
   .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2px;
   }
 
@@ -336,9 +337,40 @@
   .feature-card:hover { background: var(--card2); }
 
   .feature-card:first-child { border-radius: 16px 0 0 0; }
-  .feature-card:nth-child(2) { border-radius: 0 16px 0 0; }
-  .feature-card:nth-child(3) { border-radius: 0 0 0 16px; }
+  .feature-card:nth-child(3) { border-radius: 0 16px 0 0; }
+  .feature-card:nth-child(4) { border-radius: 0 0 0 16px; }
   .feature-card:last-child { border-radius: 0 0 16px 0; }
+
+  .feature-card-premium {
+    background: #111 !important;
+    border: 1px solid #2a2a2a !important;
+  }
+
+  .feature-card-premium:hover { background: #161616 !important; }
+
+  .feature-icon-premium svg { stroke: #888 !important; }
+
+  .feature-desc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .premium-item {
+    font-size: 13px;
+    color: var(--grey-1);
+    line-height: 1.4;
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .premium-item::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--grey-3);
+    font-size: 11px;
+  }
 
   .feature-icon {
     width: 40px; height: 40px;
@@ -570,7 +602,7 @@
 <section class="hero">
   <div class="logo-wrap">
     <!-- Logo placeholder — replace src with hosted image URL -->
-    <img src="https://raw.githubusercontent.com/calmtechnotebook/calmfeed/main/CalmFeed_Logo_1024x1024.png" alt="CalmFeed logo" />
+    <img src="https://raw.githubusercontent.com/calmtechnotebook/calmfeed/main/CalmFeed_Logo_1024x1024_nobackground.png" alt="CalmFeed logo" />
   </div>
   <p class="hero-eyebrow">Calm Tech Notebook</p>
   <h1 class="hero-title">Be informed.<br><em>Protect your calm.</em></h1>
@@ -759,6 +791,27 @@
       </div>
       <div class="feature-name">Intentional pauses</div>
       <div class="feature-desc">The Pause tab guides you through a breathing exercise before you return to reading. A moment, not a metric.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+      </div>
+      <div class="feature-name">Mute any topic, anytime</div>
+      <div class="feature-desc">Need a break from a stressful subject? Hide it for 24 hours, a week, or a month. The news will still be there when you're ready.</div>
+    </div>
+    <div class="feature-card feature-card-premium">
+      <div class="feature-icon feature-icon-premium">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="feature-name">CalmFeed Premium</div>
+      <div class="feature-desc-list">
+        <div class="premium-item">Thematic dossiers to organize your reading</div>
+        <div class="premium-item">Exclusive themes &amp; custom fonts</div>
+        <div class="premium-item">Automatic data backup</div>
+        <div class="premium-item">Calm reading statistics</div>
+        <div class="premium-item">Mastodon &amp; Bluesky interactions</div>
+        <div class="premium-item">Extreme Calm mode &amp; Quiet Hours</div>
+      </div>
     </div>
   </div>
 </section>
